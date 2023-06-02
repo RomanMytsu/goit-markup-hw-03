@@ -73,11 +73,11 @@ h6 {
 }
 .header-container {
   display: flex;
+  padding: 24px 0;
 }
 .header-nav {
   display: flex;
   align-items: center;
-  padding: 24px 0;
 }
 
 .logo-link {
@@ -114,7 +114,6 @@ h6 {
 .contacts-list {
   display: flex;
   gap: 40px;
-  padding: 24px 0;
 }
 .contacts-link {
   letter-spacing: 0.02em;
