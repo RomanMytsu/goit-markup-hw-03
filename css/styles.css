@@ -23,6 +23,9 @@ ul {
   margin-bottom: 0;
   padding-left: 0;
 }
+img {
+  display: block;
+}
 
 .link {
   text-decoration: none;
@@ -37,7 +40,6 @@ ul {
   padding-right: 15px;
   padding-left: 15px;
   margin: 0 auto;
-  outline: 2px solid red;
 }
 
 p,
@@ -51,6 +53,19 @@ h6 {
   margin-bottom: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* Header */
 
 .header {
@@ -59,7 +74,6 @@ h6 {
 }
 .header-container {
   display: flex;
-  justify-content: space-between;
 }
 .header-nav {
   display: flex;
@@ -95,6 +109,7 @@ h6 {
 }
 .contacts {
   font-style: normal;
+  margin-left: auto;
 }
 .contacts-list {
   display: flex;
@@ -111,12 +126,12 @@ h6 {
 
 /* HERO */
 .hero {
+  background: #2e2f42;
+  padding: 188px 0;
 }
 .hero-container {
-  background: #2e2f42;
   display: flex;
   flex-direction: column;
-  padding: 0 316px;
 }
 .hero-title {
   font-weight: 700;
@@ -127,6 +142,8 @@ h6 {
   color: var(--white-color);
   max-width: 496px;
   margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .hero-btn {
   font-family: 'Roboto', sans-serif;
@@ -143,7 +160,7 @@ h6 {
   color: var(--white-color);
   padding: 16px 32px;
   display: block;
-  align-self: center;
+  margin: 0 auto;
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -151,19 +168,36 @@ h6 {
 }
 
 /* Our advantages */
+
+.advant {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.advant-list {
+  display: flex;
+  gap: 24px;
+}
+.advant-item {
+  width: calc((100%-72) / 4);
+}
 .advant-title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  margin-bottom: 8px;
 }
 .advant-text {
   letter-spacing: 0.02em;
 }
 
 /* About us */
-.about {
+.about-us {
+  margin-bottom: 120px;
+}
+.about-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
@@ -172,13 +206,26 @@ h6 {
   text-transform: capitalize;
   text-align: center;
   color: #2e2f42;
+  margin-bottom: 72px;
+}
+.about-list {
+  display: flex;
+  gap: 24px;
+}
+.about-item {
+  width: calc((100%-48) / 3);
 }
 
 /* Our Team */
 .our-team {
   background: #f4f4fd;
+  padding: 120px 0;
 }
-.team {
+.team-list {
+  display: flex;
+  gap: 24px;
+}
+.team-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
@@ -186,9 +233,18 @@ h6 {
   letter-spacing: 0.02em;
   text-transform: capitalize;
   color: #2e2f42;
+  margin-bottom: 72px;
 }
-.team-card {
+.team-item {
   background: #ffffff;
+  width: calc((100% - 24px * 3) / 4);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
+}
+.team-content {
+  padding: 32px 16px;
+  text-align: center;
 }
 .team-name {
   font-weight: 500;
@@ -196,6 +252,7 @@ h6 {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  margin-bottom: 8px;
 }
 .team-position {
   letter-spacing: 0.02em;
@@ -204,13 +261,27 @@ h6 {
 /* Footer */
 .footer {
   background: #2e2f42;
+  padding: 100px 0;
 }
 .footer-text {
   letter-spacing: 0.02em;
   color: #f4f4fd;
+  max-width: 264px;
+  margin-top: 16px;
 }
 
 /* Portfolio */
+.portfolio {
+  padding-top: 96px;
+  padding-bottom: 120px;
+}
+.filters-list {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 72px;
+  justify-content: center;
+  align-items: center;
+}
 .filters-btn {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -221,11 +292,26 @@ h6 {
   color: #4d5ae5;
   background: #f4f4fd;
   cursor: pointer;
+  padding: 12px 24px;
+  border: 1px solid #e7e9fc;
+  border-radius: 4px;
 }
 .filters-btn:hover,
 .filters-btn:focus {
   color: #ffffff;
   background: #404bbf;
+  border: 1px solid #e7e9fc;
+  border-radius: 4px;
+}
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 24px;
+}
+.portfolio-content {
+  padding: 32px 16px;
+  border: 1px solid #e7e9fc;
+  border-top: none;
 }
 .portfolio-title {
   font-weight: 500;
@@ -233,6 +319,7 @@ h6 {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  margin-bottom: 8px;
 }
 .portfolio-text {
   letter-spacing: 0.02em;
